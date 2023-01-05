@@ -1,3 +1,5 @@
+package sum;
+
 import java.util.Scanner;
 
 public class No11720 {

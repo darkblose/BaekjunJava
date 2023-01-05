@@ -1,3 +1,5 @@
+package sum;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,33 +10,33 @@ public class No10986 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken());
-        int M = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
-        long[] sNum = new long[N];
-        long[] Remain = new long[M];
-        long Cnt = 0;
+        long[] sNum = new long[n];
+        long[] remain = new long[m];
+        long cnt = 0;
 
         st = new StringTokenizer(br.readLine());
         sNum[0] = Integer.parseInt(st.nextToken());
-        for (int i = 1; i < N; i++) {
+        for (int i = 1; i < n; i++) {
             sNum[i] = sNum[i - 1] + Integer.parseInt(st.nextToken());
         }
 
-        for (int i = 0; i < N; i++) {
-            int Remainder = (int) (sNum[i] % M);
-            if (Remainder == 0) {
-                Cnt++;
+        for (int i = 0; i < n; i++) {
+            int remainder = (int) (sNum[i] % m);
+            if (remainder == 0) {
+                cnt++;
             }
-            Remain[Remainder]++;
+            remain[remainder]++;
         }
 
-        for (int i = 0; i < M; i++) {
-            if (Remain[i] > 1) {
-                Cnt += (Remain[i] * (Remain[i] - 1) / 2);
+        for (int i = 0; i < m; i++) {
+            if (remain[i] > 1) {
+                cnt += (remain[i] * (remain[i] - 1) / 2);
             }
         }
 
-        System.out.println(Cnt);
+        System.out.println(cnt);
     }
 }

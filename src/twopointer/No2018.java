@@ -1,3 +1,5 @@
+package twopointer;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -8,27 +10,27 @@ public class No2018 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(st.nextToken());
-        int[] sNum = new int[N];
-        int Cnt = 1;
+        int n = Integer.parseInt(st.nextToken());
+        int[] sNum = new int[n];
+        int cnt = 1;
 
         sNum[0] = 1;
-        for (int i = 1; i < N; i++) {
+        for (int i = 1; i < n; i++) {
             sNum[i] = sNum[i - 1] + i;
         }
 
-        for (int i = 0; i < N; i++) {
-            for (int j = i + 1; j < N; j++) {
-                if (sNum[j] - sNum[i] > N) {
+        for (int i = 0; i < n; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if (sNum[j] - sNum[i] > n) {
                     break;
                 } else {
-                    if (sNum[j] - sNum[i] == N) {
-                        Cnt++;
+                    if (sNum[j] - sNum[i] == n) {
+                        cnt++;
                     }
                 }
             }
         }
-        System.out.println(Cnt);
+        System.out.println(cnt);
 
     }
 

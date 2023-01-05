@@ -1,3 +1,5 @@
+package twopointer;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -9,36 +11,36 @@ public class No1940 {
 
         BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
-        int Answer = 0;
+        int answer = 0;
 
         st = new StringTokenizer(bf.readLine());
-        int N = Integer.parseInt(st.nextToken());
+        int n = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(bf.readLine());
-        int M = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
 
         st = new StringTokenizer(bf.readLine());
-        int[] aNum = new int[N];
-        for (int i = 0; i < N; i++) {
+        int[] aNum = new int[n];
+        for (int i = 0; i < n; i++) {
             aNum[i] = Integer.parseInt(st.nextToken());
         }
 
         Arrays.sort(aNum);
 
         int i = 0;
-        int j = N - 1;
+        int j = n - 1;
         while (i < j) {
-            int Sum = aNum[i] + aNum[j];
-            if (Sum < M) {
+            int sum = aNum[i] + aNum[j];
+            if (sum < m) {
                 i++;
-            } else if (Sum > M) {
+            } else if (sum > m) {
                 j--;
             } else {
                 i++;
                 j--;
-                Answer++;
+                answer++;
             }
         }
-        System.out.println(Answer);
+        System.out.println(answer);
     }
 }

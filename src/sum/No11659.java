@@ -1,3 +1,5 @@
+package sum;
+
 import java.util.Scanner;
 
 public class No11659 {
@@ -18,12 +20,12 @@ public class No11659 {
         }
 
         for (int i = 0; i < M; i++) {
-            int Start = sc.nextInt() - 1;
-            int End = sc.nextInt() - 1;
-            if (Start == 0) {
-                System.out.println(sNum[End]);
+            int start = sc.nextInt() - 1;
+            int end = sc.nextInt() - 1;
+            if (start == 0) {
+                System.out.println(sNum[end]);
             } else {
-                System.out.println(sNum[End] - sNum[Start - 1]);
+                System.out.println(sNum[end] - sNum[start - 1]);
             }
         }
     }
