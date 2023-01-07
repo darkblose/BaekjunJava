@@ -9,17 +9,17 @@ import java.util.StringTokenizer;
 public class No1940 {
     public static void main(String[] args) throws IOException {
 
-        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
         int answer = 0;
 
-        st = new StringTokenizer(bf.readLine());
+        st = new StringTokenizer(br.readLine());
         int n = Integer.parseInt(st.nextToken());
 
-        st = new StringTokenizer(bf.readLine());
+        st = new StringTokenizer(br.readLine());
         int m = Integer.parseInt(st.nextToken());
 
-        st = new StringTokenizer(bf.readLine());
+        st = new StringTokenizer(br.readLine());
         int[] aNum = new int[n];
         for (int i = 0; i < n; i++) {
             aNum[i] = Integer.parseInt(st.nextToken());

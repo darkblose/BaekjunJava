@@ -1,14 +1,13 @@
 package sort.merge;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class No2751 {
     static int[] listA, listTmp;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
         listA = new int[n];
         listTmp = new int[n];
@@ -18,8 +17,10 @@ public class No2751 {
         }
         mergeSort(0, listA.length - 1);
         for (int i = 0; i < listA.length; i++) {
-            System.out.println(listA[i]);
+            bw.write(listA[i] + "\n");
         }
+        bw.flush();
+        bw.close();
     }
 
     public static void mergeSort(int indexStart, int indexEnd) {
