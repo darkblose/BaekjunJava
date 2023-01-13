@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class No1072Sol {
+public class No2512Sol {
 
     static int n;
     static int[] budget;
