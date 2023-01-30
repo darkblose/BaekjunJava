@@ -1,5 +1,6 @@
 package com.algorithm.baekjoon.binarysearch;
 
+import com.algorithm.baekjoon.search.binarysearch.No1072;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

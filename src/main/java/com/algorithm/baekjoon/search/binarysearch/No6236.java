@@ -1,4 +1,4 @@
-package com.algorithm.baekjoon.binarysearch;
+package com.algorithm.baekjoon.search.binarysearch;
 
 import java.io.*;
 import java.util.StringTokenizer;

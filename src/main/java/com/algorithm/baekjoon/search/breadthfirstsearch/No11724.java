@@ -3,9 +3,7 @@ package com.algorithm.baekjoon.search.breadthfirstsearch;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 
 public class No11724 {
     public static void main(String[] args) throws IOException {
@@ -29,20 +27,39 @@ public class No11724 {
         for (int i = 1; i < n + 1; i++) {
             if (!visited[i]) {
                 count++;
+//                DFS(lists, visited, i);
                 BFS(lists, visited, i);
             }
         }
         System.out.println(count);
     }
 
-    static void BFS(List<List<Integer>> lists, boolean[] visited, int v) {
+    static void DFS(List<List<Integer>> lists, boolean[] visited, int v) {
         if (visited[v]) {
             return;
         }
         visited[v] = true;
         for (int i : lists.get(v)) {
             if (visited[i] == false) {
-                BFS(lists, visited, i);
+                DFS(lists, visited, i);
+            }
+        }
+    }
+
+    private static void BFS(List<List<Integer>> lists, boolean[] visited, int n) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(n);
+
+        while (!queue.isEmpty()) {
+            int data = queue.poll();
+            visited[data] = true;
+
+            for (int i = 0; i < lists.get(data).size(); i++) {
+                int result = lists.get(data).get(i);
+                if (!visited[result]) {
+                    visited[result] = true;
+                    queue.add(result);
+                }
             }
         }
     }
