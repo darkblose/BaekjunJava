@@ -1,6 +1,5 @@
-package com.algorithm.baekjoon.sort;
+package com.algorithm.baekjoon.datastructures.twopointer;
 
-import com.algorithm.baekjoon.datastructures.twopointer.No2470;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

@@ -1,6 +1,5 @@
-package com.algorithm.baekjoon.average;
+package com.algorithm.baekjoon.math;
 
-import com.algorithm.baekjoon.math.No1546;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

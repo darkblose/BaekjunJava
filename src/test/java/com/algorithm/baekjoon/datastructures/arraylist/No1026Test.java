@@ -1,6 +1,5 @@
-package com.algorithm.baekjoon.sort;
+package com.algorithm.baekjoon.datastructures.arraylist;
 
-import com.algorithm.baekjoon.datastructures.arraylist.No1026;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 

@@ -1,4 +1,4 @@
-package com.algorithm.baekjoon.datastructures.arraylist;
+package com.algorithm.baekjoon.prefixsum;
 
 import java.util.Scanner;
 

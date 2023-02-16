@@ -1,4 +1,4 @@
-package com.algorithm.baekjoon.datastructures.arraylist;
+package com.algorithm.baekjoon.prefixsum;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,27 +13,16 @@ public class No11660 {
         int n = Integer.parseInt(st.nextToken());
         int m = Integer.parseInt(st.nextToken());
 
-        int[][] aNum = new int[n][n];
-        int[][] sNum = new int[n + 1][n + 1];
+        int[][] matrix = new int[n][n];
 
         for (int i = 0; i < n; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < n; j++) {
-                aNum[i][j] = Integer.parseInt(st.nextToken());
+                matrix[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
-        sNum[1][1] = aNum[0][0];
-        for (int i = 1; i < n; i++) {
-            sNum[i + 1][1] = sNum[i][1] + aNum[i][0];
-            sNum[1][i + 1] = sNum[1][i] + aNum[0][i];
-        }
-
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < n; j++) {
-                sNum[i + 1][j + 1] = sNum[i][j + 1] + sNum[i + 1][j] - sNum[i][j] + aNum[i][j];
-            }
-        }
+        int[][] sumMatrix = getSumMatrix(n, matrix);
 
         for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine());
@@ -42,10 +31,23 @@ public class No11660 {
             int X2 = Integer.parseInt(st.nextToken());
             int Y2 = Integer.parseInt(st.nextToken());
 
-            System.out.println(sNum[X2][Y2] - sNum[X2][Y1 - 1] - sNum[X1 - 1][Y2] + sNum[X1 - 1][Y1 - 1]);
+            System.out.println(sumMatrix[X2][Y2] - sumMatrix[X2][Y1 - 1] - sumMatrix[X1 - 1][Y2] + sumMatrix[X1 - 1][Y1 - 1]);
+        }
+    }
 
-
+    private static int[][] getSumMatrix(int n, int[][] matrix) {
+        int[][] sumMatrix = new int[n + 1][n + 1];
+        sumMatrix[1][1] = matrix[0][0];
+        for (int i = 1; i < n; i++) {
+            sumMatrix[i + 1][1] = sumMatrix[i][1] + matrix[i][0];
+            sumMatrix[1][i + 1] = sumMatrix[1][i] + matrix[0][i];
         }
 
+        for (int i = 1; i < n; i++) {
+            for (int j = 1; j < n; j++) {
+                sumMatrix[i + 1][j + 1] = sumMatrix[i][j + 1] + sumMatrix[i + 1][j] - sumMatrix[i][j] + matrix[i][j];
+            }
+        }
+        return sumMatrix;
     }
 }

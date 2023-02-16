@@ -1,4 +1,4 @@
-package com.algorithm.baekjoon.binarysearch;
+package com.algorithm.baekjoon.search.binarysearch;
 
 import com.algorithm.baekjoon.search.binarysearch.No1072;
 import lombok.extern.slf4j.Slf4j;
