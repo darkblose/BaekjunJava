@@ -23,7 +23,7 @@ public class No2023 {
             return;
         }
         for (int i = 1; i < 10; i++) {
-            if (i % 2 == 0) { // 짝수이면 더 이상 탐색할 필요가 없음
+            if (i % 2 == 0) { // 짝수이면 더 이상 탐색할 필요가ㄴ 없음
                 continue;
             }
             if (isPrime(number * 10 + i)) { // 소수이면 재귀로 자리수를 늘려갑니다.
